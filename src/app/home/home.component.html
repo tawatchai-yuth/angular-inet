@@ -1,0 +1,26 @@
+<div class="container">
+  <h5 class="text-center"></h5>
+  <div class="row justify-content-md-center">
+    <div class="col-sm-10">
+      <div class="card events-view">
+        <img style="max-width: 100%; height: 400px;" src="assets/img/imghome1.jpg" class="card-img-top" alt="..." >
+      </div>
+      <div class="row">
+        <div class="col-md-4 mt-1" *ngFor="let event of events">
+          <div class="card w-90 mtc">
+            <a routerLink="../detail/{{event.id}}" routerLinkActive="active"><img src="assets/img/runlogin.png" class="card-img-top size-img"></a>
+            <div class="card-body">
+              <h3 class="card-title font-weight-bold">{{event.event_name}}</h3>
+              <p class="card-text"><fa-icon [icon]="faCalendar"></fa-icon> {{event.date_event | date:'mediumDate'}}</p>
+              <p class="card-text"><fa-icon [icon]="faLocationArrow"></fa-icon> {{event.location_name }}</p>
+              <div class="text-center mtp">
+                <button type="submit" class="btn btn-primary" (click)="select(event)">Package</button>
+              </div>
+              <p class="card-text text-right"><small class="text-muted">Update : {{event.date_update | date:'mediumDate'}}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

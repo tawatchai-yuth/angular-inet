@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-12 mt-3">
+      <div class="text-center">
+        <img src="assets/img/imghome3.jpg" style="width:90%;" height="500px">
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let event of events">
+    <div class="row justify-content-md-center" >
+      <div class="col-12 col-sm-10 mt-4">
+        <h1>{{event.event_name}}</h1>
+        <p class="text-break font-weight-light">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"{{event.event_detail}}"</p>
+      </div>
+      <div class="col-12 col-sm-10 mt-4">
+        <h1>วันจัดงาน</h1>
+        <p class="text-break font-weight-light">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<fa-icon [icon]="faCalendar"></fa-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{event.date_event | date:'mediumDate'}}</p>
+      </div>
+      <div class="col-12 col-sm-10 mt-4">
+        <h1>สถานที่</h1>
+        <p class="text-break font-weight-light">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<fa-icon [icon]="faLocationArrow"></fa-icon> {{event.location_name }}</p>
+      </div>
+      <div class="col-12 col-sm-10 mt-4">
+        <div *ngIf="packages.length">
+          <h1>อัตราค่าสมัคร</h1>
+          <div class="table">
+            <table class="table table-bordered">
+              <thead>
+                <tr class="text-center">
+                  <th>แพ็กเกจ</th>
+                  <th>ราคา</th>
+                  <th>จำนวนผู้ลงทะเบียน / จำนวนรับสมัคร</th>
+                  <th>ลงทะเบียน</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let package of packages">
+                  <td class="text-center word-wrap">{{package.package_name}}</td>
+                  <td class="text-center">{{package.price}} บาท</td>
+                  <td class="text-center">{{package.number_register}}/{{package.number}} คน</td>
+                  <td class="text-center"><button class="btn btn-success" (click)="select(package)">Register</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

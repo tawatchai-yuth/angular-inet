@@ -1,0 +1,59 @@
+ <div class="container">
+   <div class="row justify-content-md-center">
+     <div class="col-12 col-md-6 mt-5">
+       <form [formGroup]="addForm" (ngSubmit)="postdata(addForm)" novalidate class="form-horizontal">
+         <h2 class="text-center">REGISTRATION</h2>
+         <div class="row mt-4">
+           <div class="col">
+             <div class="form-group">
+               <label for="first_name">First Name :</label>
+               <div>
+                 <input type="text" formControlName="first_name" placeholder="First Name" class="form-control" name="first_name" id="first_name">
+                </div>
+             </div>
+           </div>
+           <div class="col">
+             <div class="form-group">
+               <label for="last_name">Last Name :</label>
+               <div>
+                 <input type="text" formControlName="last_name" placeholder="Last Name" class="form-control" name="last_name" id="last_name">
+                </div>
+             </div>
+           </div>
+         </div>
+         <div class="form-group">
+           <label for="email">Email :</label>
+           <div>
+             <input type="email" formControlName="email" placeholder="Email" class="form-control" name="email" id="email">
+            </div>
+         </div>
+         <div class="form-group">
+           <label for="tel">Phone number :</label>
+           <div>
+             <input type="text" formControlName="tel" placeholder="Phone number" class="form-control" name="tel" id="tel">
+            </div>
+         </div>
+         <h2 class="text-center">Package</h2>
+         <div class="form-group">
+           <label for="package_name">Package Name :</label>
+           <div>
+             <input type="text" formControlName="package_name" placeholder="Package Name" class="form-control" name="package_name" id="package_name">
+            </div>
+         </div>
+         <div class="form-group">
+           <label for="price">Price :</label>
+           <div>
+             <input type="text" formControlName="price" placeholder="Price" class="form-control" name="price" id="price">
+            </div>
+         </div>
+         <div class="form-group">
+           <label for="number_register">สามารถลงทะเบียนได้ : {{addForm.value.number}}  คน</label>
+           <div>
+             <input type="text" formControlName="number_register" placeholder="จำนวนผู้ลงทะเบียน" class="form-control" name="number_register" id="number_register">
+            </div>
+         </div>
+         <button type="submit" class="btn btn-primary btn-block">Register</button>
+       </form>
+     </div>
+   </div>
+ </div>

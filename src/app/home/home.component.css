@@ -1,0 +1,20 @@
+.events-view {
+  /* margin-bottom: 5px;; */
+}
+.word-wrap {
+  word-break:break-all;
+}
+.mtp {
+  margin-bottom: 10px;
+}
+.mtc {
+  margin-top: 10px;
+}
+.size-img {
+  width: 300px;
+  height: 200px;
+}
+/* img {
+  max-width: 100%;
+  height: 500px;
+} */
